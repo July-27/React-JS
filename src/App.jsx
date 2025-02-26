@@ -6,11 +6,12 @@ import "./App.css";
 const App = () => {
   const [count, setCount] = useState(0);
 
-  // arrow function
-  const myFunction = () => {
+  // arrow function(name must start with upper case character)
+  const MyFunction = () => {
     console.log(">>> run my arrow function");
+    return <div>You must take 4 hours a day for study Code FE in 6 months</div>;
   };
-  myFunction();
+  MyFunction();
 
   return (
     <>
@@ -22,7 +23,8 @@ const App = () => {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Hello World</h1>
+      <h1>Hello July</h1>
+      <MyFunction />
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
