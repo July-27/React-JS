@@ -3,13 +3,13 @@ import { useState } from "react";
 const TodoNew = (props) => {
   // useState hook(getter/setter)
   // const valueInput = "July";
-  const [valueInput, setValueInput] = useState("July");
+  const [valueInput, setValueInput] = useState("");
 
   const { AddNewTodo } = props;
   // AddNewTodo("July");
   const HandleClick = () => {
-    alert(`Added`);
     AddNewTodo(valueInput);
+    setValueInput("");
   };
 
   const HandleOnChange = (name) => {
@@ -21,9 +21,9 @@ const TodoNew = (props) => {
       <input
         type="text"
         onChange={(event) => HandleOnChange(event.target.value)}
+        value={valueInput}
       />
       <button onClick={HandleClick}>Add</button>
-      <div>My text input is: {valueInput}</div>
     </div>
   );
 };

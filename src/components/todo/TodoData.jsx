@@ -13,18 +13,24 @@ const TodoData = (props) => {
   //   }
 
   // cách 3
-  const { name, age, data } = props;
+  const { todoList } = props;
   // ý nghĩa của cách trên
   // const name = props.name;
   // const age = props.age;
   // const data = props.data;
 
-  // console.log("check props: ", props);
+  console.log("check props: ", todoList);
   return (
     <div className="todo-data">
-      <div> My name is {name} </div>
-      <div> Learning React </div>
-      <div> Watching Youtube</div>
+      {todoList.map((item, index) => {
+        console.log(item, index);
+        return (
+          <div className="todo-item">
+            <div>{item.name}</div>
+            <button>Delete</button>
+          </div>
+        );
+      })}
       <div>{JSON.stringify(props.todoList)}</div>
     </div>
   );
