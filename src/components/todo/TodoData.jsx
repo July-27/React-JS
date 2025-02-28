@@ -13,11 +13,15 @@ const TodoData = (props) => {
   //   }
 
   // cách 3
-  const { todoList } = props;
+  const { todoList, DeleteTodo } = props;
   // ý nghĩa của cách trên
   // const name = props.name;
   // const age = props.age;
   // const data = props.data;
+
+  const DeleteClick = (id) => {
+    DeleteTodo(id);
+  };
 
   console.log("check props: ", todoList);
   return (
@@ -27,7 +31,12 @@ const TodoData = (props) => {
         return (
           <div className="todo-item" key={item.id}>
             <div>{item.name}</div>
-            <button>Delete</button>
+            <button
+              onClick={() => DeleteClick(item.id)}
+              style={{ cursor: "pointer" }}
+            >
+              Delete
+            </button>
           </div>
         );
       })}
